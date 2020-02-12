@@ -5,7 +5,7 @@ index 8a15570..57a8af1 100644
 @@ -82,7 +82,6 @@ class CMakeBuild(build_ext):
              env.get('CXXFLAGS', ''),
              self.distribution.get_version())
- 
+
 -        env['CXX'] = 'g++'
          env['PYTHON_EXECUTABLE'] = sys.executable
          if not os.path.exists(self.build_temp):
@@ -15,7 +15,7 @@ index 03db0f6..ae6c8b7 100644
 --- a/src/pipemode_op/Dataset/CMakeLists.txt
 +++ b/src/pipemode_op/Dataset/CMakeLists.txt
 @@ -27,16 +27,11 @@ message("python executable $ENV{PYTHON_EXECUTABLE}")
- 
+
  execute_process(COMMAND "$ENV{PYTHON_EXECUTABLE}" "-c"
  	"import tensorflow as tf; import sys; sys.stdout.write(tf.sysconfig.get_lib() + '/')"
 -	OUTPUT_VARIABLE TF_LIB_DIR)
@@ -23,30 +23,30 @@ index 03db0f6..ae6c8b7 100644
  execute_process(COMMAND "$ENV{PYTHON_EXECUTABLE}" "-c"
  	"import tensorflow as tf; import sys; sys.stdout.write(tf.sysconfig.get_include() + '/')"
  	OUTPUT_VARIABLE TF_INCLUDE_DIR)
- 
--find_library(TF_LIB 
+
+-find_library(TF_LIB
 -	NAMES libtensorflow_framework.so.1
 -	PATHS "${TF_LIB_DIR}"
 -	NO_DEFAULT_PATH)
 -
  target_compile_options(PipeModeOp PRIVATE "-D_GLIBCXX_USE_CXX11_ABI=0")
- 
+
  target_link_libraries(PipeModeOp ${TF_LIB})
 diff --git a/src/pipemode_op/test/testRecordReader/CMakeLists.txt b/src/pipemode_op/test/testRecordReader/CMakeLists.txt
 index c130c72..272c084 100644
 --- a/src/pipemode_op/test/testRecordReader/CMakeLists.txt
 +++ b/src/pipemode_op/test/testRecordReader/CMakeLists.txt
 @@ -15,12 +15,7 @@ file(GLOB_RECURSE sources ./*.cpp ./*.hpp)
- 
+
  execute_process(COMMAND "python" "-c"
  	"import tensorflow as tf; import sys; sys.stdout.write(tf.sysconfig.get_lib() + '/')"
 -	OUTPUT_VARIABLE TF_LIB_DIR)
 -
--find_library(TF_LIB 
+-find_library(TF_LIB
 -	NAMES libtensorflow_framework.so.1
 -	PATHS "${TF_LIB_DIR}"
 -	NO_DEFAULT_PATH)
 +	OUTPUT_VARIABLE TF_LIB)
- 
+
  add_executable(testRecordReader ${sources})
  target_compile_options(testRecordReader PRIVATE "-D_GLIBCXX_USE_CXX11_ABI=0")
