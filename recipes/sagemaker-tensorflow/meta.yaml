@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - cmake
+    - {{ compiler('cxx') }}
     - libcurl
     - curl
     - tensorflow >=1.7
