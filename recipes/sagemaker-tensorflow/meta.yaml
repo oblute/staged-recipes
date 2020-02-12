@@ -22,6 +22,8 @@ requirements:
     - tensorflow >=1.7
     - sagemaker-python-sdk
     - setuptools
+    - boto3
+    - docker-compose
   host:
     - python
     - pip
@@ -30,6 +32,8 @@ requirements:
     - curl
     - tensorflow >=1.7
     - sagemaker-python-sdk
+    - boto3
+    - docker-compose
   run:
     - python
     - setuptools
@@ -37,6 +41,8 @@ requirements:
     - curl
     - tensorflow >=1.7
     - sagemaker-python-sdk
+    - boto3
+    - docker-compose
 
 test:
   requires:
