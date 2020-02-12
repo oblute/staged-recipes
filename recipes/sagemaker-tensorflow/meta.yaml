@@ -37,6 +37,7 @@ requirements:
     - sagemaker-python-sdk
     - boto3
     - docker-compose
+    - zlib
   run:
     - python
     - setuptools
@@ -46,6 +47,7 @@ requirements:
     - sagemaker-python-sdk
     - boto3
     - docker-compose
+    - zlib
 
 test:
   requires:
