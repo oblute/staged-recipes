@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/aws/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 63c2382dfc042a2d317f99fcf973fed904782759fc1bb4a112479fcb5459b16e
+  patches:
+    - cxx_flag.patch
 
 build:
   number: 0
