@@ -13,41 +13,41 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [(py27) or (win)]
+  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  skip: True  # [win]
 
 requirements:
   build:
     - cmake
     - {{ compiler('cxx') }}
-    - libcurl
-    - curl
+    # - libcurl
+    # - curl
     - tensorflow <=1.12
-    - sagemaker-python-sdk
-    - setuptools
-    - boto3
-    - docker-compose
+    # - sagemaker-python-sdk
+    # - setuptools
+    # - boto3
+    # - docker-compose
   host:
     - python <=3.6
     - pip
-    - setuptools
-    - libcurl
-    - curl
+    # - setuptools
+    # - libcurl
+    # - curl
     - tensorflow <=1.12
     - sagemaker-python-sdk
-    - boto3
-    - docker-compose
-    - zlib
+    # - boto3
+    # - docker-compose
+    # - zlib
   run:
     - python <=3.6
-    - setuptools
-    - libcurl
-    - curl
+    # - setuptools
+    # - libcurl
+    # - curl
     - tensorflow <=1.12
     - sagemaker-python-sdk
-    - boto3
-    - docker-compose
-    - zlib
+    # - boto3
+    # - docker-compose
+    # - zlib
 
 test:
   requires:
