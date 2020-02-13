@@ -38,7 +38,7 @@ requirements:
     # - boto3
     # - docker-compose
     # - zlib
-    # - glib
+    - glib
   run:
     - python <=3.6
     - tensorflow <=1.12
@@ -49,7 +49,7 @@ requirements:
     # - boto3
     # - docker-compose
     # - zlib
-    # - glib
+    - glib
 
 test:
   requires:
