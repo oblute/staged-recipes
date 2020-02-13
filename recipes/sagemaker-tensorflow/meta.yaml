@@ -9,7 +9,7 @@ source:
   url: https://github.com/aws/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 63c2382dfc042a2d317f99fcf973fed904782759fc1bb4a112479fcb5459b16e
   patches:
-    - setup_and_tflib.patch
+    - setuppy.patch
 
 build:
   number: 0
@@ -22,28 +22,28 @@ requirements:
     - {{ compiler('cxx') }}
     - libcurl
     - curl
-    - tensorflow >=1.7
+    - tensorflow <=1.12
     - sagemaker-python-sdk
     - setuptools
     - boto3
     - docker-compose
   host:
-    - python
+    - python <=3.6
     - pip
     - setuptools
     - libcurl
     - curl
-    - tensorflow >=1.7
+    - tensorflow <=1.12
     - sagemaker-python-sdk
     - boto3
     - docker-compose
     - zlib
   run:
-    - python
+    - python <=3.6
     - setuptools
     - libcurl
     - curl
-    - tensorflow >=1.7
+    - tensorflow <=1.12
     - sagemaker-python-sdk
     - boto3
     - docker-compose
