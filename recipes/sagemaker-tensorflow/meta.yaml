@@ -20,7 +20,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - tensorflow
+    - tensorflow <=1.12
     # - libcurl
     # - curl
     # - sagemaker-python-sdk
@@ -30,7 +30,7 @@ requirements:
   host:
     - pip
     - python <=3.6
-    - tensorflow
+    - tensorflow <=1.12
     - sagemaker-python-sdk
     # - setuptools
     # - libcurl
