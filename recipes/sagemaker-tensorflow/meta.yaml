@@ -29,6 +29,7 @@ requirements:
     # - setuptools
     # - boto3
     # - docker-compose
+    - glib ==2.14
   host:
     - pip
     - python <=3.6
@@ -40,7 +41,7 @@ requirements:
     # - boto3
     # - docker-compose
     # - zlib
-    # - glib
+    - glib ==2.14
   run:
     - python <=3.6
     - tensorflow <=1.12
@@ -51,7 +52,7 @@ requirements:
     # - boto3
     # - docker-compose
     # - zlib
-    # - glib
+    - glib ==2.14
 
 test:
   requires:
