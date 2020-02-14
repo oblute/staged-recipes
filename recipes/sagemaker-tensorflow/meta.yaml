@@ -23,25 +23,27 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - tensorflow <=1.12
-    - libcurl
-    - curl
+    # - libcurl
+    # - curl
     - sagemaker-python-sdk
     # - setuptools
     # - boto3
     # - docker-compose
-    - glib
+    # - glib
+    - protobuf >=3.6.0
   host:
     - pip
     - python <=3.6
     - tensorflow <=1.12
     - sagemaker-python-sdk
     # - setuptools
-    - libcurl
-    - curl
+    # - libcurl
+    # - curl
     # - boto3
     # - docker-compose
-    # - zlib
-    - glib
+    # # - zlib
+    # - glib
+    - protobuf >=3.6.0
   run:
     - python <=3.6
     - tensorflow <=1.12
@@ -53,6 +55,7 @@ requirements:
     # - docker-compose
     # - zlib
     # - glib
+    - protobuf >=3.6.0
 
 test:
   requires:
