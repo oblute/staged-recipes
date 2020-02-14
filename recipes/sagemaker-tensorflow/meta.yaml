@@ -13,35 +13,35 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
   skip: True  # [win]
-  missing_dso_whitelist:
-    - /lib64/libc.so.6
+  # missing_dso_whitelist:
+  #   - /lib64/libc.so.6
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
     - tensorflow <=1.12
-    # - libcurl
-    # - curl
+    - libcurl
+    - curl
     - sagemaker-python-sdk
     # - setuptools
     # - boto3
     # - docker-compose
-    # - glib
+    - glib
   host:
     - pip
     - python <=3.6
     - tensorflow <=1.12
     - sagemaker-python-sdk
     # - setuptools
-    # - libcurl
-    # - curl
+    - libcurl
+    - curl
     # - boto3
     # - docker-compose
     # - zlib
-    # - glib
+    - glib
   run:
     - python <=3.6
     - tensorflow <=1.12
