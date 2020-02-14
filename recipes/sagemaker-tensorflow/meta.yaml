@@ -22,7 +22,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    # - tensorflow <=1.12
+    - tensorflow <=1.12
     # - libcurl
     # - curl
     - sagemaker-python-sdk
