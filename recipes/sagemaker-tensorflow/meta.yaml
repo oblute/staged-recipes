@@ -29,7 +29,7 @@ requirements:
     # - setuptools
     # - boto3
     # - docker-compose
-    - glib ==2.14
+    - glib
   host:
     - pip
     - python <=3.6
