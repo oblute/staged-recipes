@@ -19,7 +19,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
-    # - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
     # - cudatoolkit-dev
   host:
     - pip
