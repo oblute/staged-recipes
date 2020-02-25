@@ -24,7 +24,7 @@ requirements:
   host:
     - pip
     - python >=3.6
-    # - numpy >=1.6
+    - numpy >=1.6
     # - setuptools
     - nvcc_linux-64
     # - cudatoolkit-dev
