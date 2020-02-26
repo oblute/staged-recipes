@@ -24,9 +24,9 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - numpy >=1.6
+    - numpy
     # - setuptools
-    - nvcc_linux-64
+    # - nvcc_linux-64
     # - cudatoolkit-dev
   run:
     - python >=3.6
@@ -34,8 +34,8 @@ requirements:
     - decorator >=3.2.0
     - mako
     - pytools >=2011.2
-    - numpy >=1.6
-    - nvcc_linux-64
+    - {{ pin_compatible('numpy') }}
+    # - nvcc_linux-64
     # - cudatoolkit-dev
 
 test:
