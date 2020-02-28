@@ -10,6 +10,6 @@ export CPATH=$CPATH:/usr/local/cuda/include
 export CUDA_INC_DIR=/usr/local/cuda/bin:$CUDA_INC_DIR
 export NO_CUDA=1
 
-./configure.py --cl-lib-dir=$PREFIX/lib --cl-libname=cuda
+./configure.py --cl-libname=cuda
 
 python setup.py install --single-version-externally-managed --record record.txt
