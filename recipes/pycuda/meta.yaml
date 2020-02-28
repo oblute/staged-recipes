@@ -19,15 +19,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     # - make
-    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
-    # - cudatoolkit-dev
+    # - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+    - cudatoolkit-dev
   host:
     - pip
     - python >=3.6
     - numpy
     - setuptools
     # - nvcc_linux-64
-    # - cudatoolkit-dev
+    - cudatoolkit-dev
   run:
     - python >=3.6
     - appdirs >=1.4.0
@@ -36,7 +36,7 @@ requirements:
     - pytools >=2011.2
     - {{ pin_compatible('numpy') }}
     # - nvcc_linux-64
-    # - cudatoolkit-dev
+    - cudatoolkit-dev
 
 test:
   imports:
