@@ -13,6 +13,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     platform='osx'
 fi
 
-./configure.py --cl-lib-dir=$PREFIX/lib --cl-libname=CUDA
+./configure.py --cl-lib-dir=$PREFIX/lib --cl-libname=cuda-gdb
 
 python setup.py install --single-version-externally-managed --record record.txt
