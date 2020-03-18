@@ -13,10 +13,13 @@ build:
   noarch: python
   number: 0
   script:
-    # - rm -f BUILD
+    - rm -f BUILD
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}     # [linux]
+    - {{ compiler('cxx') }}   # [linux]
   host:
     - python
     - pip
