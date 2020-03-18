@@ -22,6 +22,7 @@ requirements:
   host:
     - python
     - pip
+    - tensorflow-base
   run:
     - python
     # - numpy >=1.13.3
@@ -29,7 +30,7 @@ requirements:
     # - decorator
     # - cloudpickle >=0.6.1
     # - tensorflow-base >=2.1.0
-    - tensorflow
+    - tensorflow-base
 
 test:
   imports:
