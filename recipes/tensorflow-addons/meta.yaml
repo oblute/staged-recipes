@@ -23,14 +23,13 @@ requirements:
     - python
     - pip
     - tensorflow-base ==2.0.0
+    - setuptools
+    - six >= 1.10.0
   run:
     - python
-    # - numpy >=1.13.3
-    # - six >=1.10.0
-    # - decorator
-    # - cloudpickle >=0.6.1
-    # - tensorflow-base >=2.1.0
     - tensorflow-base ==2.0.0
+    - setuptools
+    - six >= 1.10.0
 
 test:
   imports:
