@@ -1,0 +1,57 @@
+{% set name = "tensorflow-addons" %}
+{% set version = "0.8.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/tensorflow/addons/archive/{{ version }}.tar.gz
+  sha256: f8349cdb71cc0726ce7d53919e0f662900e7c2134fc44e5f4ba2bda62cee69bf
+
+build:
+  noarch: python
+  number: 0
+  script:
+    # - rm -f BUILD
+    - {{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    # - numpy >=1.13.3
+    # - six >=1.10.0
+    # - decorator
+    # - cloudpickle >=0.6.1
+    - tensorflow-base >=1.14.0
+
+test:
+  imports:
+    - tensorflow_addons
+
+about:
+  home: https://www.tensorflow.org/addons
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: 'TensorFlow Addons is a repository of contributions that conform to well-established API patterns'
+  description: |
+    TensorFlow Addons is a repository of contributions that conform to
+    well-established API patterns, but implement new functionality not
+    available in core TensorFlow. TensorFlow natively supports a large
+    number of operators, layers, metrics, losses, and optimizers.
+    However, in a fast moving field like ML, there are many interesting new
+    developments that cannot be integrated into core TensorFlow (because
+    their broad applicability is not yet clear, or it is mostly used by
+    a smaller subset of the community).
+  doc_url: https://www.tensorflow.org/addons
+  dev_url: https://github.com/tensorflow/addons
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - benhuff
