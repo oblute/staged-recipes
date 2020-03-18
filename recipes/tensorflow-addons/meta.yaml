@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/tensorflow/addons/archive/{{ version }}.tar.gz
+  url: https://github.com/tensorflow/addons/archive/v{{ version }}.tar.gz
   sha256: f8349cdb71cc0726ce7d53919e0f662900e7c2134fc44e5f4ba2bda62cee69bf
 
 build:
