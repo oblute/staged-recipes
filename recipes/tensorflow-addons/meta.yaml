@@ -10,7 +10,6 @@ source:
   sha256: f8349cdb71cc0726ce7d53919e0f662900e7c2134fc44e5f4ba2bda62cee69bf
 
 build:
-  noarch: python
   number: 0
   script:
     - rm -f BUILD
