@@ -1,5 +1,5 @@
 {% set name = "tensorflow-addons" %}
-{% set version = "0.8.3" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/addons/archive/v{{ version }}.tar.gz
-  sha256: f8349cdb71cc0726ce7d53919e0f662900e7c2134fc44e5f4ba2bda62cee69bf
+  sha256: 6c003745ac7cc371bebc6e625617d265c9767c841e5ecb8627c08823357548f7
 
 build:
   number: 0
@@ -22,7 +22,7 @@ requirements:
   host:
     - python
     - pip
-    - tensorflow-base
+    - tensorflow-base ==2.0.0
   run:
     - python
     # - numpy >=1.13.3
@@ -30,7 +30,7 @@ requirements:
     # - decorator
     # - cloudpickle >=0.6.1
     # - tensorflow-base >=2.1.0
-    - tensorflow-base
+    - tensorflow-base ==2.0.0
 
 test:
   imports:
