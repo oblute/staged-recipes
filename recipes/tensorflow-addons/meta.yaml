@@ -28,7 +28,7 @@ requirements:
     # - six >=1.10.0
     # - decorator
     # - cloudpickle >=0.6.1
-    - tensorflow-base >=1.14.0
+    - tensorflow-base >=2.1.0
 
 test:
   imports:
