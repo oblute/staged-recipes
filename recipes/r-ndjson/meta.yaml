@@ -33,18 +33,20 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    # - r-rcpp
+    - r-rcpp
     - r-data.table
-    # - r-tibble
+    - r-tibble
     - zlib
+    - r-rstan
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    # - r-rcpp
+    - r-rcpp
     - r-data.table
-    # - r-tibble
+    - r-tibble
     - zlib
-
+    - r-rstan
+  
 test:
   commands:
     - $R -e "library('ndjson')"           # [not win]
