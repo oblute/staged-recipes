@@ -12,6 +12,8 @@ source:
     - {{ cran_mirror }}/src/contrib/ndjson_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ndjson/ndjson_{{ version }}.tar.gz
   sha256: 22a037dbad0ae17e0ac442f45370fa7b4c4cc23f66ef1a949fe4e910dd5b7f53
+  patches:
+    - Makvarswin.patch
 
 build:
   merge_build_host: True  # [win]
@@ -46,7 +48,7 @@ requirements:
     - r-tibble
     - zlib
     - r-rstan
-  
+
 test:
   commands:
     - $R -e "library('ndjson')"           # [not win]
