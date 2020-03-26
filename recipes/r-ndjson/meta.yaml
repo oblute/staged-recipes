@@ -36,12 +36,14 @@ requirements:
     - r-rcpp
     - r-data.table
     - r-tibble
+    - zlib
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp
     - r-data.table
     - r-tibble
+    - zlib
 
 test:
   commands:
