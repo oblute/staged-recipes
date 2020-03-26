@@ -39,7 +39,6 @@ requirements:
     - r-data.table
     - r-tibble
     - zlib
-    - r-rstan
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -47,7 +46,6 @@ requirements:
     - r-data.table
     - r-tibble
     - zlib
-    - r-rstan
 
 test:
   commands:
