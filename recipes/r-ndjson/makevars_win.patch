@@ -1,10 +1,27 @@
 diff --git a/src/Makevars.win b/src/Makevars.win
-index 6a7213d..1b4517c 100644
+index 6a7213d..d4946e9 100644
 --- a/src/Makevars.win
 +++ b/src/Makevars.win
-@@ -1,3 +1,5 @@
+@@ -1,3 +1,21 @@
++VERSION = 2.2.3
++COMPILED_BY ?= gcc-4.6.3
++TARGET = lib$(subst gcc,,$(COMPILED_BY))$(R_ARCH)
++
 +CXX14 = g++ -std=c++1y
 +CXX14FLAGS = -O3 -Wno-unused-variable -Wno-unused-function
  CXX_STD = CXX14
  PKG_CXXFLAGS = -I../inst/include
- PKG_LIBS = -L. -lz -lpthread -pthread
+-PKG_LIBS = -L. -lz -lpthread -pthread
++PKG_CPPFLAGS = -I$(LIBRARY_INC)
++
++PKG_LIBS = \
++  -L$(LIBRARY_LIB) \
++
++winlibs:
++	mkdir -p ../inst
++	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" --vanilla "../tools/winlibs.R" $(VERSION)
++
++clean:
++	rm -f $(SHLIB) $(OBJECTS)
++
++.PHONY: all winlibs clean
