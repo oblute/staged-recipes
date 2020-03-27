@@ -35,15 +35,15 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - r-rcpp
+    - r-rcpp >=0.12.0
     - r-data.table
     - r-tibble
     - zlib
-    - r-rstan >=2.18.1
+    - r-rstan ==2.19.3
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - r-rcpp
+    - r-rcpp >=0.12.0
     - r-data.table
     - r-tibble
     - zlib
