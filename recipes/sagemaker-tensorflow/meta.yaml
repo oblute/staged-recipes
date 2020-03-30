@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
-  skip: True  # [(win) or (x86_64)]
+  skip: True  # [win]
   # missing_dso_whitelist:
   #   - /lib64/libc.so.6
 
@@ -22,7 +22,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - tensorflow <=1.12
+    - tensorflow-base
     # - libcurl
     # - curl
     - sagemaker-python-sdk
@@ -34,7 +34,7 @@ requirements:
   host:
     - pip
     - python <=3.6
-    - tensorflow <=1.12
+    - tensorflow-base
     - sagemaker-python-sdk
     # - setuptools
     # - libcurl
@@ -46,7 +46,7 @@ requirements:
     - protobuf >=3.6.0
   run:
     - python <=3.6
-    - tensorflow <=1.12
+    - tensorflow-base
     - sagemaker-python-sdk
     # - setuptools
     # - libcurl
@@ -55,7 +55,7 @@ requirements:
     # - docker-compose
     # - zlib
     # - glib
-    - protobuf >=3.6.0
+    # - protobuf >=3.6.0
 
 test:
   requires:
