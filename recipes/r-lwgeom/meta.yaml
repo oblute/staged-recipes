@@ -40,14 +40,14 @@ requirements:
   host:
     - r-base
     - r-rcpp
-    - r-sf >=0.9_3
+    - r-sf
     - r-units
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp
-    - r-sf >=0.9_3
+    - r-sf
     - r-units
 
 test:
