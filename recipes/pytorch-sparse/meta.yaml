@@ -24,11 +24,10 @@ requirements:
     - pytest
     - pytorch
     - pytest-runner
+    - setuptools
   run:
     - python
     - pytorch
-    - scipy
-    - pytest-runner
 
 test:
   requires:
