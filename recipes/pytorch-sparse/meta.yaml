@@ -15,19 +15,19 @@ build:
   script: python -m pip install . -vv
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+  # build:
+  #   - {{ compiler('c') }}
+  #   - {{ compiler('cxx') }}
   host:
     - pip
     - python
-    - pytorch
+    - pytorch >=1.4.0
     - pytest-runner
     - setuptools
     - scipy
   run:
     - python
-    - pytorch
+    - pytorch >=1.4.0
 
 test:
   requires:
