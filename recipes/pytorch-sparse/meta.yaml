@@ -1,5 +1,5 @@
 {% set name = "torch_sparse" %}
-{% set version = "0.0.3.post2" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
