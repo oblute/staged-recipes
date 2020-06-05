@@ -21,10 +21,10 @@ requirements:
   host:
     - pip
     - python
-    - pytest
     - pytorch
     - pytest-runner
     - setuptools
+    - scipy
   run:
     - python
     - pytorch
