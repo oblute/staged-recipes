@@ -15,9 +15,8 @@ build:
   script: python -m pip install . -vv
 
 requirements:
-  # build:
-  #   - {{ compiler('c') }}
-  #   - {{ compiler('cxx') }}
+  build:
+    - {{ compiler('cxx') }}
   host:
     - pip
     - python
