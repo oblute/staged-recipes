@@ -26,7 +26,6 @@ requirements:
     - scipy
   run:
     - python
-    - pytorch >=1.4.0
 
 test:
   requires:
