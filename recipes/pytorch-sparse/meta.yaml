@@ -20,10 +20,12 @@ requirements:
     - python
     - pytest
     - pytorch
+    - pytest-runner
   run:
     - python
     - pytorch
     - scipy
+    - pytest-runner
 
 test:
   requires:
