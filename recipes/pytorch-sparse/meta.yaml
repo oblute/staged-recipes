@@ -13,6 +13,10 @@ build:
   noarch: python
   number: 0
   script: python -m pip install . -vv
+  ignore_run_exports:
+    - libcxx
+    - libgcc-ng
+    - libstdcxx-ng
 
 requirements:
   build:
@@ -25,10 +29,8 @@ requirements:
     - pytest-runner
     - setuptools
     - scipy
-    - libcxx
   run:
     - python
-    - libcxx
 
 test:
   requires:
