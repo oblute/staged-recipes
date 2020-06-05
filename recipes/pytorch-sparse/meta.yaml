@@ -12,11 +12,11 @@ source:
 build:
   noarch: python
   number: 0
+  skip: True  # [win]
   script: python -m pip install . -vv
-  ignore_run_exports:
-    - libcxx
-    - libgcc-ng
-    - libstdcxx-ng
+  error_overlinking: True
+  missing_dso_whitelist:
+      - '*'
 
 requirements:
   build:
@@ -31,6 +31,10 @@ requirements:
     - scipy
   run:
     - python
+  ignore_run_exports:
+    - libcxx
+    - libgcc-ng
+    - libstdcxx-ng
 
 test:
   requires:
