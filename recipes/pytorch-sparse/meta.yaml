@@ -31,6 +31,7 @@ requirements:
     - scipy
   run:
     - python
+    - pytorch >=1.4.0
   ignore_run_exports:
     - libcxx
     - libgcc-ng
