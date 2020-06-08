@@ -27,13 +27,14 @@ requirements:
   host:
     - pip
     - python
-    - pytorch-cpu
+    - pytorch
     - pytest-runner
     - setuptools
     - scipy
   run:
     - python
-    - pytorch-cpu
+    - pytorch
+    - scipy
   ignore_run_exports:
     - libcxx
     - libgcc-ng
