@@ -32,6 +32,10 @@ requirements:
     - python
     - pytorch
     - scipy
+  ignore_run_exports:
+    - libcxx
+    - libgcc-ng
+    - libstdcxx-ng
 
 test:
   requires:
