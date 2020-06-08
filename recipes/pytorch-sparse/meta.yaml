@@ -9,21 +9,18 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2d2bb488e14207187f9856d2a9349851e7a3cc37d0f5cf7c7ed930d0fc8c7531
   patches:
-    - cuda_setup.patch
+    - remove_runtime_error.patch.patch
 
 build:
-  noarch: python
   number: 0
   skip: True  # [win]
   script: python -m pip install . -vv
-  error_overlinking: True
-  missing_dso_whitelist:
-      - '*'
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != "None"]
   host:
     - pip
     - python
@@ -35,10 +32,6 @@ requirements:
     - python
     - pytorch
     - scipy
-  ignore_run_exports:
-    - libcxx
-    - libgcc-ng
-    - libstdcxx-ng
 
 test:
   requires:
