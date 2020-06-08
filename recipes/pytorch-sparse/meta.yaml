@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2d2bb488e14207187f9856d2a9349851e7a3cc37d0f5cf7c7ed930d0fc8c7531
+  patches:
+    - cuda_setup.patch
 
 build:
   noarch: python
