@@ -12,11 +12,11 @@ source:
 build:
   number: 0
   script:
-    - cd yGnome/py_gnome
+    - cd pyGnome/py_gnome
     - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-host:
+  host:
     - python
     - setuptools
     - numpy
