@@ -27,7 +27,7 @@ requirements:
     - awesome-slugify
     - unit_conversion
     - pytest
-    - git
+    - gitpython
   run:
     - numpy
     - python
@@ -37,7 +37,7 @@ requirements:
     - awesome-slugify
     - pytest
     - unit_conversion
-    - git
+    - gitpython
 
 test:
   imports:
