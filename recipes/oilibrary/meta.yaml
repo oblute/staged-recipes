@@ -1,0 +1,54 @@
+{% set name = "oil_library" %}
+{% set version = "1.1.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/NOAA-ORR-ERD/OilLibrary/archive/v{{ version }}.tar.gz
+  sha256: a4c00a049fb6f442ac0953af7eb0ffda514a9d76efaf31288d39265a403e6de4
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  host:
+    - python
+    - pip
+    - numpy
+    - setuptools
+    - sqlalchemy
+    - transaction
+    - zope.sqlalchemy
+    - awesome-slugify
+    - unit_conversion
+    - pytest
+  run:
+    - numpy
+    - python
+    - sqlalchemy
+    - transaction
+    - zope.sqlalchemy
+    - awesome-slugify
+    - pytest
+    - unit_conversion
+
+test:
+  imports:
+    - oil_library
+
+about:
+  home: https://github.com/NOAA-ORR-ERD/OilLibrary
+  license: Public Domain
+  license_family: Public Domain
+  license_file: LICENSE
+  summary: "OilLibrary is The NOAA library of oils and their properties. It is developed by the National Oceanic and Atmospheric Administration (NOAA), Office of Response and Restoration (ORR), Emergency Response Division."
+  dev_url: https://github.com/NOAA-ORR-ERD/OilLibrary
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - ndmaxar
