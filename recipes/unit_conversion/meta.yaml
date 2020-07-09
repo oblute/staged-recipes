@@ -1,0 +1,39 @@
+{% set name = "unit_conversion" %}
+{% set version = "2.8.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/NOAA-ORR-ERD/PyNUCOS/archive/v{{ version }}.tar.gz
+  sha256: 566e994ea4ed9c6b65ca3c1087a9e7399a805c180d0bb71c85c73d45f44d7e6e
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - unit_conversion
+
+about:
+  home: https://github.com/NOAA-ORR-ERD/PyNUCOS
+  license: Public Domain
+  license_family: Public Domain
+  license_file: LICENSE
+  summary: "Python NOAA Unit Converter for Oil Spills"
+  dev_url: https://github.com/NOAA-ORR-ERD/PyNUCOS
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - ndmaxar

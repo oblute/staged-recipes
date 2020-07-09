@@ -1,0 +1,55 @@
+{% set name = "py-gnome" %}
+{% set version = "0.6.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/NOAA-ORR-ERD/OilLibrary/archive/v{{ version }}.tar.gz
+  sha256: a4c00a049fb6f442ac0953af7eb0ffda514a9d76efaf31288d39265a403e6de4
+
+build:
+  number: 0
+  script:
+    - cd yGnome/py_gnome
+    - python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+host:
+    - python
+    - setuptools
+    - numpy
+    - netcdf4
+    - cython
+  run:
+    - oil_library
+    - python
+    - pytest
+    - scipy
+    - numpy
+    - netcdf4
+    - colander
+    - pil
+    - pyzmq
+    - repoze.lru
+    - six
+    - geojson
+
+test:
+  imports:
+    - py_gnome
+
+about:
+  home: https://github.com/NOAA-ORR-ERD/PyGnome
+  license: Public Domain
+  license_family: Public Domain
+  license_file: LICENSE
+  summary: "GNOME (General NOAA Operational Modeling Environment) is a modeling tool developed by the National Oceanic and Atmospheric Administration (NOAA), Office of Response and Restoration (ORR), Emergency Response Division."
+  dev_url: https://github.com/NOAA-ORR-ERD/PyGnome
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - ndmaxar
