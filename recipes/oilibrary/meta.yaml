@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/NOAA-ORR-ERD/OilLibrary/archive/v{{ version }}.tar.gz
   sha256: a4c00a049fb6f442ac0953af7eb0ffda514a9d76efaf31288d39265a403e6de4
+  patches:
+    - python3adj.patch
 
 build:
   number: 0
