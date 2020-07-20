@@ -38,6 +38,7 @@ requirements:
     - tabulate
     - langdetect
     - sentencepiece
+    - tokenizers
 
 test:
   imports:
