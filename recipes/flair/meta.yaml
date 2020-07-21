@@ -55,7 +55,7 @@ about:
   dev_url: https://github.com/flairNLP/flair
 
 extra:
-  recipe-maintainers:
+  recipe-maintainers: 
     - oblute
     - rluria14
     - ndmaxar
