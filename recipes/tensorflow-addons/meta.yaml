@@ -1,5 +1,4 @@
-{% set name = "tensorflow-addons" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/addons/archive/v{{ version }}.tar.gz
-  sha256: e6bfe8f1c826f3fb04db636b677a51565ad603e9f96a5aaf858f7fa51d729961
+  sha256: 190c514c6785ef4011c00c3512b31d5ffed307aeebf0ebf310c28fed327c74c9
 
 build:
   number: 0
@@ -15,6 +14,9 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - pip
     - python
