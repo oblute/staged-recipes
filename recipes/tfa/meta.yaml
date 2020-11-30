@@ -1,0 +1,45 @@
+{% set version = "0.11.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/tensorflow/addons/archive/v{{ version }}.tar.gz
+  sha256: 190c514c6785ef4011c00c3512b31d5ffed307aeebf0ebf310c28fed327c74c9
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - pip
+    - python
+  run:
+    - python
+    - tensorflow
+    - typeguard >=2.7
+
+test:
+  imports:
+    - tensorflow_addons
+
+about:
+  home: https://github.com/tensorflow/addons
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: TensorFlow Addons is a repository of contributions that conform to well-established API patterns, but implement new functionality not available in core TensorFlow.
+  doc_url: https://www.tensorflow.org/addons/api_docs/python/tfa
+  dev_url: https://github.com/tensorflow/addons
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - ndmaxar
