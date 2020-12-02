@@ -24,7 +24,7 @@ test:
     - m2-coreutils  # [win]
 
   commands:
-    - ecctl --version
+    - ecctl deployment list
 
 about:
   home: https://www.elastic.co/guide/en/ecctl/current/index.html
