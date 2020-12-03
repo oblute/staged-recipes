@@ -20,6 +20,7 @@ requirements:
 
 test:
   commands:
+    - test -x {{ target_gobin }}ecctl{{ target_goexe }}
     - ecctl version --help
 
 about:
