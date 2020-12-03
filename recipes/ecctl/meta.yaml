@@ -21,6 +21,7 @@ requirements:
 test:
   commands:
     - test -x {{ target_gobin }}ecctl{{ target_goexe }}
+    - ecctl --help
 
 about:
   home: https://www.elastic.co/guide/en/ecctl/current/index.html
