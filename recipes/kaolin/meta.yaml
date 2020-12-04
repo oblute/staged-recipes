@@ -15,6 +15,10 @@ build:
   skip: True  # [(not linux) or (not py36)]
 
 requirements:
+  compilers:
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cuda') }}
   host:
     - pip
     - python
