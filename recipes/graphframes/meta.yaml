@@ -22,12 +22,10 @@ requirements:
     - numpy
     - python
     - pyspark
-    - pytest
 
 test:
   requires:
-    - pyspark
-    - pytest
+    - pyspark.tests
   imports:
     - graphframes
     - graphframes.examples
