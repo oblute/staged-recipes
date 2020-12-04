@@ -21,6 +21,7 @@ requirements:
     - nose
     - numpy
     - python
+    - pyspark
 
 test:
   imports:
