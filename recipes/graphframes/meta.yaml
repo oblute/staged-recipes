@@ -11,12 +11,10 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
-    - nose
-    - numpy
     - pip
     - python
   run:
@@ -32,13 +30,12 @@ test:
 
 about:
   home: "https://github.com/graphframes/graphframes"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: ""
+  license: Apache-2
+  license_family: Apache
+  license_file: LICENSE
   summary: "GraphFrames: DataFrame-based Graphs"
-  doc_url: ""
-  dev_url: ""
+  dev_url: https://github.com/graphframes/graphframes"
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
+    - oblute
