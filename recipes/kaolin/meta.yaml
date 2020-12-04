@@ -1,0 +1,41 @@
+{% set name = "kaolin" %}
+{% set version = "0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://github.com/NVIDIAGameWorks/kaolin/archive/v{{ version }}.tar.gz"
+  sha256: 2ef44b0b6e270a7cbeca102da98f6670bdbf99bdd918fa69516544fe0de0607
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [not linux]
+
+requirements:
+  host:
+    - pip
+    - python ==3.6
+    - pytorch
+  run:
+    - python ==3.6
+    - pytorch
+
+test:
+  imports:
+    - kaolin
+
+about:
+  home: https://github.com/NVIDIAGameWorks/kaolin
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: "Kaolin is a PyTorch library aiming to accelerate 3D deep learning research"
+  doc_url: https://kaolin.readthedocs.io/en/latest/
+  dev_url: https://github.com/NVIDIAGameWorks/kaolin
+
+extra:
+  recipe-maintainers:
+    - oblute
