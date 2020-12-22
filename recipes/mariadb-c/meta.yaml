@@ -22,8 +22,10 @@ requirements:
     - pkg-config
   host:
     - mysql-connector-c
+    - openssl
   run:
     - mysql-connector-c
+    - openssl
 
 test:
   imports:
