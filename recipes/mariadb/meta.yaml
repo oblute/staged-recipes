@@ -12,6 +12,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [win]
 
 requirements:
   build:
@@ -20,12 +21,10 @@ requirements:
   host:
     - pip
     - python
-    - mysql-connector-c
-    - mysql-connector-python
+    - mariadb-c
   run:
     - python
-    - mysql-connector-c
-    - mysql-connector-python
+    - mariadb-c
 
 test:
   imports:
