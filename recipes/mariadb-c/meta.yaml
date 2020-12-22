@@ -11,7 +11,6 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
   missing_dso_whitelist:  # [linux]
     - '*'  # [linux]
 
@@ -29,6 +28,7 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/include/ma_config.h   # [unix]
+    - if not exist %PREFIX%\\Library\\include\\ma_config.h exit 1  # [win]
 
 about:
   home: https://github.com/mariadb-corporation/mariadb-connector-c
