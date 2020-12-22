@@ -23,13 +23,15 @@ requirements:
   host:
     - mysql-connector-c
     - openssl
+    - zlib
   run:
     - mysql-connector-c
     - openssl
+    - zlib
 
 test:
-  imports:
-    - mariadb
+  commands:
+    - test -f ${PREFIX}/include/mariadb/ma_io.h   # [unix]
 
 about:
   home: https://github.com/mariadb-corporation/mariadb-connector-c
