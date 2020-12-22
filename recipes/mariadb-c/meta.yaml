@@ -16,18 +16,13 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - cmake
     - make
     - pkg-config
   host:
-    - mysql-connector-c
     - openssl
-    - zlib
   run:
-    - mysql-connector-c
     - openssl
-    - zlib
 
 test:
   commands:
