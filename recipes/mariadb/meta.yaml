@@ -1,0 +1,41 @@
+{% set name = "mariadb-python" %}
+{% set version = "1.05" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e639f98a881e9b25e446c564a8e52c6ef0bcf7abcf7d5a6749bc7ef5d36e504d
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - mariadb
+
+about:
+  home: https://mariadb-corporation.github.io/mariadb-connector-python/
+  license: LGPL-2.1-or-later
+  license_family: LGPL
+  license_file: LICENSE
+  summary: MariaDB Connector/Python enables python programs to access MariaDB and MySQL databases
+  doc_url: https://mariadb-corporation.github.io/mariadb-connector-python/
+  dev_url: https://www.github.com/mariadb-corporation/mariadb-connector-python
+
+extra:
+  recipe-maintainers:
+    - oblute
