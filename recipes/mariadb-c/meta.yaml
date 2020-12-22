@@ -12,8 +12,8 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  missing_dso_whitelist:
-    - '*'
+  missing_dso_whitelist:  # [linux]
+    - '*'  # [linux]
 
 requirements:
   build:
