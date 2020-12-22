@@ -20,8 +20,12 @@ requirements:
   host:
     - pip
     - python
+    - mysql-connector-c
+    - mysql-connector-python
   run:
     - python
+    - mysql-connector-c
+    - mysql-connector-python
 
 test:
   imports:
